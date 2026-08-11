@@ -83,51 +83,47 @@
 
 			 
 	## SCHEMA- STAR SCHEMA –COMPANY DATABASE:			
-                    +------------------+
-                    |   Departments    |
-                    +------------------+
-                    | DepartmentID (PK)|
-                    | DepartmentName   |
-                    +------------------+
-                            |
-                            |
-                            v
+              
+                      +------------------+
+                      |   Departments    |
+                      +------------------+
+                      | DepartmentID     |
+                      | DepartmentName   |
+                      +--------+---------+
+                               |
+                               |
+                               v
 
 +------------------+   +------------------+   +------------------+
 |    Customers     |   |    Employees     |   |     Projects     |
 +------------------+   +------------------+   +------------------+
-| CustomerID (PK)  |   | EmployeeID (PK)  |   | ProjectID (PK)   |
+| CustomerID       |   | EmployeeID       |   | ProjectID        |
 | CustomerName     |   | FirstName        |   | ProjectName      |
 | City             |   | LastName         |   | StartDate        |
 | Phone            |   | Salary           |   | EndDate          |
-+------------------+   | DepartmentID(FK)|   +------------------+
-          |            +------------------+            |
-          |                     |                       |
-          |                     |                       |
-          v                     v                       v
++--------+---------+   | DepartmentID     |   +--------+---------+
+         \             +--------+---------+            /
+          \                     |                     /
+           \                    |                    /
+            \                   |                   /
+             \                  |                  /
+              \                 |                 /
+               \                |                /
+                \               |               /
+                 \              |              /
+                  \             |             /
+                   \            |            /
+                    v           v           v
 
-                  +--------------------------------+
-                  |      FACT_COMPANY_DATA         |
-                  +--------------------------------+
-                  | EmployeeID (FK)               |
-                  | DepartmentID (FK)             |
-                  | CustomerID (FK)               |
-                  | ProjectID (FK)                |
-                  | OrderID                       |
-                  | OrderAmount                   |
-                  | Salary                        |
-                  +--------------------------------+
-                               ^
-                               |
-                               |
-
-                     +------------------+
-                     |      Orders      |
-                     +------------------+
-                     | OrderID (PK)     |
-                     | CustomerID (FK)  |
-                     | OrderDate        |
-                     | OrderAmount      |
-                     +------------------+
+                +--------------------------+
+                |      FACT_ORDERS         |
+                +--------------------------+
+                | OrderID                  |
+                | CustomerID               |
+                | EmployeeID               |
+                | ProjectID                |
+                | OrderDate                |
+                | OrderAmount              |
+                +--------------------------+
 			 
 
