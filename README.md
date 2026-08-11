@@ -81,3 +81,53 @@
 		     CTE, Sub query, Window function ,
 		     Functions , Store procedures, Views
 
+			 
+	## SCHEMA- STAR SCHEMA –COMPANY DATABASE:			
+                    +------------------+
+                    |   Departments    |
+                    +------------------+
+                    | DepartmentID (PK)|
+                    | DepartmentName   |
+                    +------------------+
+                            |
+                            |
+                            v
+
++------------------+   +------------------+   +------------------+
+|    Customers     |   |    Employees     |   |     Projects     |
++------------------+   +------------------+   +------------------+
+| CustomerID (PK)  |   | EmployeeID (PK)  |   | ProjectID (PK)   |
+| CustomerName     |   | FirstName        |   | ProjectName      |
+| City             |   | LastName         |   | StartDate        |
+| Phone            |   | Salary           |   | EndDate          |
++------------------+   | DepartmentID(FK)|   +------------------+
+          |            +------------------+            |
+          |                     |                       |
+          |                     |                       |
+          v                     v                       v
+
+                  +--------------------------------+
+                  |      FACT_COMPANY_DATA         |
+                  +--------------------------------+
+                  | EmployeeID (FK)               |
+                  | DepartmentID (FK)             |
+                  | CustomerID (FK)               |
+                  | ProjectID (FK)                |
+                  | OrderID                       |
+                  | OrderAmount                   |
+                  | Salary                        |
+                  +--------------------------------+
+                               ^
+                               |
+                               |
+
+                     +------------------+
+                     |      Orders      |
+                     +------------------+
+                     | OrderID (PK)     |
+                     | CustomerID (FK)  |
+                     | OrderDate        |
+                     | OrderAmount      |
+                     +------------------+
+			 
+
