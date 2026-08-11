@@ -125,5 +125,47 @@
                 | OrderDate                |
                 | OrderAmount              |
                 +--------------------------+
-			 
+
+
+
+## Constraints Used in CompanyDB :
+
+1. ## PRIMARY KEY:
+   
+● Uniquely identifies each record in a table.
+
+● Cannot contain NULL values.
+
+Example:
+
+<img width="245" height="21" alt="{8781EC5D-1BFB-4B5F-9688-54932AD65A26}" src="https://github.com/user-attachments/assets/89dde566-418b-4c7a-a28c-97b0149a3831" />
+
+2. ## FOREIGN KEY:
+
+● Creates a relationship between two tables.
+
+● Ensures referential integrity.
+
+Example:
+
+<img width="316" height="73" alt="{FE88946C-56BD-498E-9E98-A180BBE9E7DD}" src="https://github.com/user-attachments/assets/26e665d2-d941-472a-a7af-6cc4101f75e2" />
+
+3. ## NOT NULL:
+
+● Ensures a column cannot have NULL values.
+
+Example:
+
+<img width="266" height="29" alt="{33A89402-FF61-427B-9E60-FF7AF8C99A7F}" src="https://github.com/user-attachments/assets/5d23ad6c-ae23-4c39-a9ab-7e3e9795d81b" />
+
+4.## UNIQUE :
+
+● Ensures all values in a column are different.
+
+Example:
+
+<img width="271" height="30" alt="{EE4AB019-2C66-4126-8096-04660CE0AFCE}" src="https://github.com/user-attachments/assets/03f2fbfa-7525-44ea-b951-ec61b7f220ec" />
+
+Example:
+
 
